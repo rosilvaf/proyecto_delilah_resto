@@ -11,7 +11,7 @@ Project is created with:
 To clone and run this project, install it locally using npm:
 Clone this repository
 ```
-git clone
+git clone https://github.com/rosilvaf/proyecto_delilah_resto.git
 ```
 ```
 
