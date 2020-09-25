@@ -44,7 +44,7 @@ When establishing a connection, you can set the following options:
 * user: The MySQL user to authenticate as.
 * password: The password of that MySQL user.
 * database: Name of the database to use for this connection (Optional).
-## Foldets with endpoints
+## Folders with endpoints
 | FOLDERS | Description |
 | --- | --- |
 | `products` | Show the files with products' endpoints |
