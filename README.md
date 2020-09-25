@@ -44,6 +44,16 @@ When establishing a connection, you can set the following options:
 * user: The MySQL user to authenticate as.
 * password: The password of that MySQL user.
 * database: Name of the database to use for this connection (Optional).
+## Create Database in PHPADMIN
+```
+
+CREATE TABLE `resto`.`orders` ( `id` INT NOT NULL AUTO_INCREMENT ,  `product_id` INT NOT NULL ,  `username` VARCHAR(255) NOT NULL ,  `status_id` INT NOT NULL ,  `created_at` TIMESTAMP on update CURRENT_TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,  `payments_method` VARCHAR(255) NOT NULL ,    PRIMARY KEY  (`id`))
+CREATE TABLE `resto`.`user_roles` ( `id` INT NOT NULL , `name` VARCHAR(255) NOT NULL ) 
+CREATE TABLE `resto`.`users` ( `id` INT NOT NULL AUTO_INCREMENT , `full_name` VARCHAR(255) NOT NULL , `password` VARCHAR(255) NOT NULL , `address` VARCHAR(255) NOT NULL , `phone` VARCHAR(255) NOT NULL , `email` VARCHAR(255) NOT NULL , `username` VARCHAR(255) NOT NULL , `role_id` INT NOT NULL , PRIMARY KEY (`id`), UNIQUE (`username`), UNIQUE (`email`), UNIQUE (`role_id`)) ENGINE = InnoDB;
+CREATE TABLE `resto`.`products` ( `id` INT NOT NULL AUTO_INCREMENT , `name` VARCHAR(255) NOT NULL , `price` FLOAT NOT NULL , `price_descount` FLOAT NOT NULL , `description` VARCHAR(255) NOT NULL , `picture` VARCHAR(255) NOT NULL , `active` TINYINT NOT NULL , PRIMARY KEY (`id`)) 
+
+INSERT INTO `user_roles` (`id`, `name`) VALUES ('1', 'administrator'), ('2', 'user');
+```
 ## Folders with endpoints
 | FOLDERS | Description |
 | --- | --- |
@@ -65,3 +75,4 @@ When establishing a connection, you can set the following options:
 | `orders/` | post | Add the  orders |
 | `orders/:id` | put | Change a previous order |
 | `orders/:id` | Delete | Delete the  products |
+
