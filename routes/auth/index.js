@@ -106,7 +106,7 @@ app.post('/login', async(req,res)=>{
     }
    });
   
-  app.delete('/user/:id',authMiddleware, async (req,res)=>{
+  app.delete('/users/:id',authMiddleware, async (req,res)=>{
     try{
         await sequelize.query(
         'DELETE  from users WHERE id = :id',
