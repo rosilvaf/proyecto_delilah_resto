@@ -70,8 +70,8 @@ INSERT INTO `user_roles` (`id`, `name`) VALUES ('1', 'administrator'), ('2', 'us
 | `auth/users` | get | Show the  users |
 | `auth/` | post | Add a   user |
 | `auth/login` | post | Validate the income of a  user |
-| `auth/users/:id` | put | Change a previous user |
-| `auth/users/:id` | Delete | Delete a user |
+| `auth/:id` | put | Change a previous user |
+| `auth/:id` | Delete | Delete a user |
 | `orders/` | get | Show the orders |
 | `orders/` | post | Add the  orders |
 | `orders/:id` | put | Change a previous order |
