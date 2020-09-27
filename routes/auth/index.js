@@ -62,7 +62,7 @@ app.post('/login', async(req,res)=>{
     
     
     
-  app.post('/users', async (req,res)=>{
+  app.post('/', async (req,res)=>{
     const { full_name, password, address, phone,email, username,role_id}= req.body;
     let hashPassword;
     
