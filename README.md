@@ -68,7 +68,8 @@ INSERT INTO `user_roles` (`id`, `name`) VALUES ('1', 'administrator'), ('2', 'us
 | `products/:id` | put | Change a previous product |
 | `products/:id` | Delete | Delete a product |
 | `auth/users` | get | Show the  users |
-| `auth/login` | post | Add the users |
+| `auth/` | post | Add a   user |
+| `auth/login` | post | Validate the income of a  user |
 | `auth/users/:id` | put | Change a previous user |
 | `auth/users/:id` | Delete | Delete a user |
 | `orders/` | get | Show the orders |
