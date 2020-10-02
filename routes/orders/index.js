@@ -12,6 +12,14 @@ app.get('/', authMiddleware, adminMiddleware, async (req, res) => {
   );
   res.send(data);
 });
+app.get('/:id',authMiddleware, async (req,res)=>{
+  const data = await sequelize.query(
+  `SELECT * FROM orders WHERE id = ${req.params.id}`,
+  {type:sequelize.QueryTypes.SELECT}
+  )
+res.send(data);
+});
+
 app.post('/', authMiddleware,async (req, res) => {
 
 
