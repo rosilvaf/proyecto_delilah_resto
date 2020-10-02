@@ -52,7 +52,7 @@ app.post('/login', async(req,res)=>{
    res.send(data);
   });
   
-    app.get('/:id',authMiddleware, async (req,res)=>{
+    app.get('/users/:id',authMiddleware,adminMiddleware, async (req,res)=>{
       const data = await sequelize.query(
       `SELECT * FROM users WHERE id = ${req.params.id}`,
       {type:sequelize.QueryTypes.SELECT}
@@ -106,7 +106,7 @@ app.post('/login', async(req,res)=>{
     }
    });
   
-  app.delete('/:id',authMiddleware, async (req,res)=>{
+  app.delete('/:id',authMiddleware,adminMiddleware,async (req,res)=>{
     try{
         await sequelize.query(
         'DELETE  from users WHERE id = :id',
