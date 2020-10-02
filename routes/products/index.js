@@ -12,6 +12,14 @@ app.get('/', authMiddleware, async (req, res) => {
   );
   res.send(data);
 });
+app.get('/:id',authMiddleware, async (req,res)=>{
+  const data = await sequelize.query(
+  `SELECT * FROM products WHERE id = ${req.params.id}`,
+  {type:sequelize.QueryTypes.SELECT}
+  )
+res.send(data);
+});
+
 app.post('/', authMiddleware, adminMiddleware, async (req, res) => {
   const { name, price, price_descount, description, picture, active } = req.body;
   try {
