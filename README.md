@@ -46,8 +46,9 @@ When establishing a connection, you can set the following options:
 * database: Name of the database to use for this connection (Optional).
 ## Create Database in PHPADMIN
 ```
-
-CREATE TABLE `delilah`.`orders` ( `id` INT NOT NULL AUTO_INCREMENT ,  `product_id` INT NOT NULL ,  `username` VARCHAR(255) NOT NULL ,  `status_id` INT NOT NULL ,  `created_at` TIMESTAMP on update CURRENT_TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,  `payments_method` VARCHAR(255) NOT NULL ,    PRIMARY KEY  (`id`))
+CREATE DATASE `deliah`
+CREATE TABLE `delilah`.`orders` ( `id` INT NOT NULL AUTO_INCREMENT ,  `product_id` INT NOT NULL ,  `user_id` INT NOT NULL ,  `status_id` INT NOT NULL ,  `created_at` TIMESTAMP on update CURRENT_TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,  `payments_method` VARCHAR(255) NOT NULL ,  `total` INT NOT NULL ,`quantity` INT NOT NULL ,   PRIMARY KEY  (`id`))
+CREATE TABLE `delilah`.`details` ( `id` INT NOT NULL AUTO_INCREMENT ,  `order_id` INT NOT NULL ,  `product_id` INT NOT NULL ,  `quantity` INT NOT NULL ,   `subtotal` INT NOT NULL ,  PRIMARY KEY  (`id`))
 CREATE TABLE `delilah`.`user_roles` ( `id` INT NOT NULL , `name` VARCHAR(255) NOT NULL ) 
 CREATE TABLE `delilah`.`users` ( `id` INT NOT NULL AUTO_INCREMENT , `full_name` VARCHAR(255) NOT NULL , `password` VARCHAR(255) NOT NULL , `address` VARCHAR(255) NOT NULL , `phone` VARCHAR(255) NOT NULL , `email` VARCHAR(255) NOT NULL , `username` VARCHAR(255) NOT NULL , `role_id` INT NOT NULL , PRIMARY KEY (`id`), UNIQUE (`username`), UNIQUE (`email`), UNIQUE (`role_id`))
 CREATE TABLE `delilah`.`products` ( `id` INT NOT NULL AUTO_INCREMENT , `name` VARCHAR(255) NOT NULL , `price` FLOAT NOT NULL , `price_descount` FLOAT NOT NULL , `description` VARCHAR(255) NOT NULL , `picture` VARCHAR(255) NOT NULL , `active` TINYINT NOT NULL , PRIMARY KEY (`id`)) 
