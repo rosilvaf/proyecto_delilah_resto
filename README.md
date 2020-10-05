@@ -61,20 +61,4 @@ INSERT INTO `user_roles` (`id`, `name`) VALUES ('1', 'administrator'), ('2', 'us
 | `products` | Show the files with products' endpoints |
 | `auth` | Show the files with users' endpoints |
 | `orders` | Show the files with orders' endpoints |
-## Routes
-| Routes | Metod | Descripción |
-| --- | --- | --- |
-| `products/` | get | Show the  products |
-| `products/` | post | Add the  products |
-| `products/:id` | put | Change a previous product |
-| `products/:id` | Delete | Delete a product |
-| `auth/users` | get | Show the  users |
-| `auth/` | post | Add a   user |
-| `auth/login` | post | Validate the income of a  user |
-| `auth/:id` | put | Change a previous user |
-| `auth/:id` | Delete | Delete a user |
-| `orders/` | get | Show the orders |
-| `orders/` | post | Add the  orders |
-| `orders/:id` | put | Change a previous order |
-| `orders/:id` | Delete | Delete the  products |
 
