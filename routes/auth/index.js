@@ -106,7 +106,7 @@ app.post('/login', async(req,res)=>{
     }
    });
   
-  app.delete('/:id',authMiddleware,adminMiddleware,async (req,res)=>{
+  app.delete('/:id',authMiddleware,adminMiddleware, async (req,res)=>{
     try{
         await sequelize.query(
         'DELETE  from users WHERE id = :id',
@@ -118,4 +118,12 @@ app.post('/login', async(req,res)=>{
        res.send(err)  
      }
   })
+
+  app.get('/payment/:id',authMiddleware,adminMiddleware, async (req,res)=>{
+    const data = await sequelize.query(
+    `SELECT users.id, orders.total, orders.payments_method, orders.product_id, orders.quantity from users INNER JOIN orders ON users.id = orders.user_id  WHERE users.id = ${req.params.id}`,
+    {type:sequelize.QueryTypes.SELECT}
+    )
+  res.send(data);
+  });
 module.exports=app;
